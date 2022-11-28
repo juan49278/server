@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false"><span id="show"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mi
+                  carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html"><i class="fa fa-user" aria-hidden="true"></i> Mi
+                  perfil</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" id="out" href="#">Cerrar sesion</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <form class="needs-validation" id="formProfile">
+      <div class="container">
+        <img src="" id="imgNew" class="img-fluid me-5 mt-5 mt-md-0 float-end" width="12%">
+        <div class="row d-flex justify-content-evenly">
+          <h1 class="mt-5 ms-5 mb-3 text-start">Perfil</h1>
+          <hr>
+          <div class="col col-md-5">
+            <div>
+              Nombre: <strong class="text-danger">*</strong>
+              <input type="text" name="profile" id="primerNombre" class="form-control mb-3 required" value="" required
+                oninput="check()" onchange="nombre()">
+              <div class="invalid-feedback">
+                Debes ingresar un nombre
+              </div>
+            </div>
+            <div>
+              Apellido: <strong class="text-danger">*</strong>
+              <input type="text" name="profile" id="primerApellido" class="form-control mb-3 required" value="" required
+                oninput="check()" onchange="apellido()">
+              <div class="invalid-feedback">
+                Debes ingresar el apellido
+              </div>
+            </div>
+            <div>
+              E-mail: <strong class="text-danger">*</strong>
+              <input type="email" name="profile" id="email" class="form-control" value="" disabled
+                data-bs-toggle="tooltip" data-bs-placement="top"
+                title="Si quieres cambiar de email, primero debes cerrar sesion e iniciar sesion nuevamente con el correo que desees">
+            </div>
+          </div>
+          <div class="col-0 col-md-5">
+            <div>
+              Segundo nombre:
+              <input type="text" name="profile" id="segundoNombre" class="form-control mb-3" value="" oninput="check()"
+                onchange="nombre2()">
+            </div>
+            <div>
+              Segundo apellido:
+              <input type="text" name="profile" id="segundoApellido" class="form-control mb-3" value=""
+                oninput="check()" onchange="apellido2()">
+            </div>
+            <div>
+              Telefono: <strong class="text-danger">*</strong>
+              <input type="number" name="profile" id="telefono" class="form-control mb-5 required" value="" required
+                oninput="check()" onchange="telephone()">
+              <div class="invalid-feedback">
+                Debes ingresar un numero de telefono
+              </div>
+              <input type="file" id="imageUpload" class="form-control col-3">
+              <button type="button" class="btn btn-danger mt-3 mb-3 disabled" id="btnDelete" data-bs-toggle="tooltip"
+                data-bs-placement="top" title="Dejar imagen por defecto">Quitar mi foto</button>
+            </div>
+          </div>
+          <p class="text-start">Info:<strong class="text-danger">*</strong> campos requeridos</p>
+          <hr class="mt-5 mb-3">
+          <button type="button" class="btn btn-primary col-md-2 col-7" id="save" onclick="check(),alertSuccess()">
+            Guardar cambios
+          </button>
+        </div>
+      </div>
+    </form>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+        2022</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/init.js"></script>
+  <script src="js/my-profile.js"></script>
+</body>
+
+</html>
