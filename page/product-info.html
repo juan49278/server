@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false"><span id="show"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html"><i class="fa fa-user" aria-hidden="true"></i>  Mi perfil</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" id="out" href="#">Cerrar sesion</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="pb-5">
+      <div class="text-center p-4">
+        <h2>Detalles del Producto</h2>
+        <p class="lead"></p>
+      </div>
+      <div class="container">
+        <div class="text-left pb-2 pt-4">
+          <h2 id="nameProduct"></h2>
+        </div>
+        <div class="d-inline-block">
+        <button class="btn btn-success" id="add" onclick="cartAdd(addCart)">
+          <img src="img/add.png" alt="add" width="40" class="cursor-active"><a href="#" style="text-decoration:none;color:white">Agregar al carrito</a></button>
+          <img src="img/left.png" alt="back" width="30" class="ms-5"><p class="d-inline-flex"><a href="products.html" style="text-decoration:none;color:black">Volver al listado</a></p>
+        </div>
+          <hr>
+        <div class="pb-2" id="contentProduct">
+          
+        </div>
+        <hr>
+        <h4 class="text-center">Comentarios</h4>
+          <ul class="list-group" id="listComment">
+          </ul>
+            <ul class="list-group" id="lastComment">
+      </ul>
+        <div class="row g-2">
+          <h4 class="text-start">Comentar</h4>
+          <div class="col-md-6">
+            <p class="text-start" id="opinion">Tu opinión:</p>
+            <textarea class="form-control" id="descripcion" rows="3" placeholder="Escribe aquí tu opinión"></textarea>
+          </div>
+          <p class="text-start" id="tuPuntuacion">Tu puntuación:</p>
+          <div class="col-md-2">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id='puntuacion'>
+              <option selected disabled>Calificación</option>
+              <option value ="1">1</option>
+              <option value ="2">2</option>
+              <option value ="3">3</option>
+              <option value ="4">4</option>
+              <option value ="5">5</option>
+            </select>
+            <button type="button" class="btn btn-primary mt-3" id="comentar">Enviar</button>
+          </div>
+        </div>
+        <hr>
+        <div id="productoRelacionado">
+          <h2 class="text-center pb-3">Productos relacionados</h2>
+          <h4>Tambien te pueden interesar ...</h4>
+
+        </div>  
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+        2022</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js" defer></script>
+</body>
+
+</html>
